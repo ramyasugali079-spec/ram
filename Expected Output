@@ -1,0 +1,7 @@
+Time=... | WRITE | Address=0 | Data=A5
+Time=... | WRITE | Address=3 | Data=3C
+Time=... | WRITE | Address=7 | Data=55
+
+Time=... | READ  | Address=0 | Data=A5
+Time=... | READ  | Address=3 | Data=3C
+Time=... | READ  | Address=7 | Data=55

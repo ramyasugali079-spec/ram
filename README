@@ -1,0 +1,87 @@
+# RAM Memory using Verilog
+
+## Description
+
+This project implements a synchronous RAM (Random Access Memory)
+using Verilog HDL.
+
+The RAM stores data at different memory addresses.
+
+Configuration:
+
+    Data Width  = 8 bits
+    RAM Depth   = 16 locations
+    Address     = 4 bits
+
+Therefore, the RAM contains:
+
+    16 x 8-bit memory locations
+
+## Inputs
+
+    clk       : Clock signal
+    reset     : Reset signal
+    we        : Write enable
+    address   : Memory address
+    data_in   : Data to be written
+
+## Output
+
+    data_out  : Data read from RAM
+
+## Operation
+
+### Write Operation
+
+When:
+
+    we = 1
+
+data_in is written into the selected address.
+
+Example:
+
+    address = 3
+    data_in = A5
+    we = 1
+
+The RAM stores:
+
+    RAM[3] = A5
+
+### Read Operation
+
+When:
+
+    we = 0
+
+the data stored at the selected address is read.
+
+Example:
+
+    address = 3
+
+Output:
+
+    data_out = A5
+
+## Files
+
+    ram_memory.v
+        RAM RTL design.
+
+    tb_ram_memory.v
+        RAM testbench.
+
+    README.md
+        Project documentation.
+
+## Simulation
+
+Compile:
+
+    iverilog -o ram_tb ram_memory.v tb_ram_memory.v
+
+Run:
+
+    vvp ram_tb
